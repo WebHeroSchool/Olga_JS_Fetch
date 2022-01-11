@@ -1,5 +1,4 @@
-const name = window.location.search.split('=')[1];
-
+const name = window.location.search.split('=')[1]; 
 const userName = (name) => {
    if (name === undefined || name === null) {
      name = 'OlgaMalaga';
