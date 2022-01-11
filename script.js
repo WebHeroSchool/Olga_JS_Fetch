@@ -50,4 +50,4 @@ fetch(link)
         document.body.append(bio);
 
     })
-    .catch(err => alert('Информация о пользователе недоступна'));
+    .catch(err => document.body.innerHTML = 'Информация о пользователе недоступна')
