@@ -1,14 +1,13 @@
 const name = window.location.search.split('=')[1];
-const link = 'https://api.github.com/users/OlgaMalaga';
 
 const userName = (name) => {
    if (name === undefined || name === null) {
-     name = 'Информация о пользователе не доступна';
+     name = 'OlgaMalaga';
    }
    return name;
  };
 
-fetch(`https://api.github.com/users/${userName(link)}`)
+fetch(`https://api.github.com/users/${userName}`)
     .then(res => res.json())
     .then(json => {
         console.log(json.avatar_url);
