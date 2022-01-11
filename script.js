@@ -1,10 +1,7 @@
-const name = window.location.search.split('=')[1]; 
-const userName = (name) => {
-   if (name === undefined || name === null) {
-     name = 'OlgaMalaga';
-   }
-   return name;
- };
+let userName = window.location.search.split('=')[1] 
+if (userName === undefined || userName === null) {
+   userName = 'OlgaMalaga';
+};
 
 fetch(`https://api.github.com/users/${userName}`)
     .then(res => res.json())
