@@ -1,23 +1,19 @@
 
 
-// location.search.substr(1).split('&')
+let string = window.location.toString();
+//const link = 'https://api.github.com/users/OlgaMalaga';
+
+let userName = (string) => {
+   let split = url.split('/');
+   let name = split[4];
+   if (name === undefined || name === null) {
+     name = 'Информация о пользователе не доступна';
+   }
+   return name;
+ };
 
 
-// let url = window.location.href;
-// let getName = (url) =>  {
-// 	let g = url.split('=');
-// 	let name = g[1];
-// 	if (name == undefined) {
-// 			name = 'SerekaKen'
-// 	}
-// 	return name;
-// }
-
-
-//const string = window.location.toString();
-const link = 'https://api.github.com/users/OlgaMalaga';
-
-fetch(link)
+fetch(`https://api.github.com/users/${userName(url)}`)
     .then(res => res.json())
     .then(json => {
         console.log(json.avatar_url);
@@ -50,5 +46,5 @@ fetch(link)
         document.body.append(bio);
 
     })
-    //.catch(err => document.body.innerHTML = 'Информация о пользователе недоступна')
-    .catch(err => console.log('Возникла проблема с вашим fetch запросом: ', error.message));
+    .catch(err => document.body.innerHTML = 'Информация о пользователе недоступна');
+  
