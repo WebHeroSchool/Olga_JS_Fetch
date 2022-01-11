@@ -1,13 +1,11 @@
 
 
-let string = window.location.toString();
+const name = window.location.search.split('=')[1];
 //const link = 'https://api.github.com/users/OlgaMalaga';
 
-let userName = (string) => {
-   let split = url.split('/');
-   let name = split[4];
+const userName = (name) => {
    if (name === undefined || name === null) {
-     name = 'Информация о пользователе не доступна';
+     name = 'OlgaMalaga';
    }
    return name;
  };
